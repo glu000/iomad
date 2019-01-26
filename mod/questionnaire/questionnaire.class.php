@@ -1196,7 +1196,7 @@ class questionnaire {
         if (empty($this->survey->id)) {
             // Create a new survey in the database.
             $fields = array('name', 'realm', 'title', 'subtitle', 'email', 'theme', 'thanks_page', 'thank_head',
-                            'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'chart_type');
+                            'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'absvalues','chart_type');
             // Theme field deprecated.
             $record = new stdClass();
             $record->id = 0;
@@ -3454,6 +3454,8 @@ class questionnaire {
             default:
         }
 
+        $showabs=$this->survey->absvalues;
+
         foreach ($allscore as $key => $sc) {
             if (isset($chartlabels[$key])) {
                 $lb = explode("|", $chartlabels[$key]);
@@ -3467,12 +3469,29 @@ class questionnaire {
                     $sectionlabel = $chartlabels[$key];
                 }
                 // If all questions of $section are unseen then don't show feedbackscores for this section.
-                if ($compare && !is_nan($scorepercent[$key])) {
-                    $table->data[] = array($sectionlabel, $scorepercent[$key] . '%' . $oppositescore,
-                        $allscorepercent[$key] . '%' . $oppositeallscore);
-                } else if (isset($allscorepercent[$key]) && !is_nan($allscorepercent[$key])) {
-                    $table->data[] = array($sectionlabel, $allscorepercent[$key] . '%' . $oppositeallscore);
+
+                if ($showabs)
+                {
+                    $allabs = round ($allscore[$key] / $nbparticipants,1);
+                    $allabs = str_replace('.', ',', $allabs);
+                    if ($compare && !is_nan($scorepercent[$key])) {
+                        $table->data[] = array($sectionlabel, $score[$key]. ' von ' . $maxscore[$key] .$oppositescore,
+                            $allabs. ' von ' . $maxscore[$key].$oppositeallscore);
+                    } else {
+                        $table->data[] = array($sectionlabel, $allabs. $oppositeallscore);
+                    }
                 }
+                else
+                {
+                    if ($compare && !is_nan($scorepercent[$key])) {
+                        $table->data[] = array($sectionlabel, $scorepercent[$key].'%'.$oppositescore,
+                            $allscorepercent[$key].'%'.$oppositeallscore);
+                    } else {
+                        $table->data[] = array($sectionlabel, $allscorepercent[$key].'%'.$oppositeallscore);
+                    }
+                }
+
+
             }
         }
         $usergraph = get_config('questionnaire', 'usergraph');

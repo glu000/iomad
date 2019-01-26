@@ -134,6 +134,8 @@ class settings_form extends \moodleform {
             $mform->addElement('select', 'feedbackscores', get_string('feedbackscores', 'questionnaire'), $options);
             $mform->addHelpButton('feedbackscores', 'feedbackscores', 'questionnaire');
 
+            $mform->addElement('select', 'absvalues', 'Absolutwerte statt %', $options);
+
             // Is the RGraph library enabled at level site?
             $usergraph = get_config('questionnaire', 'usergraph');
             if ($usergraph) {
