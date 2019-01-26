@@ -1196,7 +1196,7 @@ class questionnaire {
         if (empty($this->survey->id)) {
             // Create a new survey in the database.
             $fields = array('name', 'realm', 'title', 'subtitle', 'email', 'theme', 'thanks_page', 'thank_head',
-                            'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'absvalues','chart_type');
+                            'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'absvalues', 'chart_type');
             // Theme field deprecated.
             $record = new stdClass();
             $record->id = 0;
@@ -1225,7 +1225,7 @@ class questionnaire {
             }
 
             $fields = array('name', 'realm', 'title', 'subtitle', 'email', 'theme', 'thanks_page',
-                    'thank_head', 'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'chart_type');
+                    'thank_head', 'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'absvalues', 'chart_type');
             $name = $DB->get_field('questionnaire_survey', 'name', array('id' => $this->survey->id));
 
             // Trying to change survey name.
