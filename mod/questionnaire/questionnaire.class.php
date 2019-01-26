@@ -3735,6 +3735,7 @@ class questionnaire {
             if ($showabs)
             {
                 $allabs = round ($allscore[$key] / $nbparticipants,1);
+                $allabs = str_replace('.', ',', $allabs);
                 if ($compare) {
                     $table->data[] = array($sectionlabel, $score[$key]. ' von ' . $maxscore[$key] .$oppositescore,
                         $allabs. ' von ' . $maxscore[$key].$oppositeallscore);
