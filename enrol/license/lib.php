@@ -342,7 +342,7 @@ class enrol_license_plugin extends enrol_plugin {
         $contact = $this->get_welcome_email_contact($sendoption, $context);
 
         // Directly emailing welcome message rather than using messaging.
-        email_to_user($user, $contact, $subject, $messagetext, $messagehtml);
+        //email_to_user($user, $contact, $subject, $messagetext, $messagehtml);
     }
 
     /**

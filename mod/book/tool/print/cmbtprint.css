@@ -1,0 +1,57 @@
+@media screen {
+    div.divFooter {
+        display: none;
+    }
+    div.divHeader {
+        display: none;
+    }
+}
+
+@media print {
+    div.divFooter {
+        position: fixed;
+        bottom: 0;
+        font-size: 0.8em;
+        line-height: normal;
+    }
+
+    div.divHeader {
+        position: fixed;
+        top: 0cm;
+        left: 145mm;
+    }
+
+    div.book_chapter {
+        padding-top: 10mm;
+        padding-bottom: 10mm;
+        line-height: normal;
+    }
+
+    div.chapter {
+        padding-top: 10mm;
+        padding-bottom: 10mm;
+        line-height: normal;
+    }
+}
+
+@page {
+    size: A4;
+    margin-top: 10mm;
+    margin-right: 10mm;
+    margin-bottom: 10mm;
+    margin-left: 15mm;
+}
+
+#page-mod-book-print {
+    color: #000;
+    background-color: #fff;
+    font-family: "Open Sans", Open-Sans, sans;
+    font-size: 1em;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#page-mod-book-print {
+    margin-left: 0px;
+    margin-right: 0px;
+}

@@ -38,7 +38,7 @@ $string['email:edit'] = 'Edit Email Templates';
 $string['email:list'] = 'List Email Templates';
 $string['email:send'] = 'Send emails using templates';
 $string['language'] = 'Language';
-$string['language_help'] = 'This is the list of currently installed language packs.  Changing the language will replace the templates for that language pack only.'; 
+$string['language_help'] = 'This is the list of currently installed language packs.  Changing the language will replace the templates for that language pack only.';
 $string['override'] = 'Replace';
 $string['pluginname'] = 'Local: Email';
 $string['privacy:metadata'] = 'The Iomad Local Email plugin only shows data stored in other locations.';
@@ -285,46 +285,64 @@ $string['expire_manager_body'] = '<p>Dear {User_FullName},</p>
 
 $string['user_reset_description'] = 'Template sent out to a user when a manager resets their user information.';
 $string['user_reset_name'] = 'User account reset';
-$string['user_reset_subject'] = 'The login details for your account have been reset';
-$string['user_reset_body'] = '<p>Dear {User_FirstName},</p>
+$string['user_reset_subject'] = 'Ihr Passwort auf der Coverdale e-Academy wurde zurückgesetzt';
+$string['user_reset_body'] = '<p>Sehr geehrte/r {User_FirstName} {User_LastName},</p>
 
-<p>Your user account details are as follows.</p>
-
-<p>username: {User_Username}</br>
-password: {User_Newpassword}</br>
-(you will have to change your password when you log in)</p>
-
-<p>Best Regards,</p>
-
-<p>{Sender_FirstName} {Sender_LastName}</p>';
+<p>Ihr Passwort auf der Coverdale e-Academy wurde zurückgesetzt. Bei Ihrer nächsten Anmeldung werden Sie vom System aufgefordert, das Passwort zu ändern.</p>
+<p>Ihre Anmeldeinformationen lauten:<p>
+<p>URL: <a href="{SiteURL}">{SiteURL}</a></p>
+<p>Username: {User_Username}</br>
+Password: {User_Newpassword}</br>
+</br>
+<p>Alle weiteren Dokumente wie</p>
+<ul>
+<li>Allgemeine Kursinformation</li>
+<li>Dokumentation</li>
+<li>Unterlagen, etc.</li>
+</ul>
+<p>finden Sie auf unserer Lernplattform. Unsere Datenschutzerkl&auml;rung finden sie <a title="Datenschutzerkl&auml;rung" href="https://www.coverdale.at/datenschutz-cookies/">hier</a>.</p>
+</br>
+Für etwaige Fragen stehen wir Ihnen gerne zur Verfügung.</br>
+</br>
+Mit freundlichen Grüßen</br>
+Margit Darnhofer</br>
+</br>
+</br>
+Coverdale Managementberatungs und -trainings Gesellschaft m.b.H.</br>
+Mohsgasse 1, Halbstock</br>
+1030 Wien</br>
+Tel. +43 (0)1 533 44 27</br>
+mailto:office@coverdale.at</p>';
 
 $string['user_create_description'] = 'Template sent out to a new user when a new account has been created.';
 $string['user_create_name'] = 'New user created';
-$string['user_create_subject'] = 'A new on-line learning account has been created for you';
-$string['user_create_body'] = '<p>Dear {User_FirstName},</p>
+$string['user_create_subject'] = 'Herzlich Willkommen zur Coverdale e-Academy';
+$string['user_create_body'] = '<p>Sehr geehrte/r {User_FirstName} {User_LastName},</p>
 
-<p>A new user account has been created for you on the \'Training Management System\'
-and you have been issued with a new temporary password.</p>
-
-<p>Your current login information is now:<p>
-<p>username: {User_Username}</br>
-password: {User_Newpassword}</br>
-(you will have to change your password
-when you login for the first time)</p>
-
-<p>To access your learning, login at</p>
-<p><a href="{LinkURL}">{LinkURL}</a></p>
-
-<p>In most mail programs, this should appear as a blue link
-which you can just click on. If that doesn\'t work,
-then cut and paste the address into the address
-line at the top of your web browser window.</p>
-
-<p>For technical queries, please contact your IT Support team/Helpdesk</p>
-
-<p>Best Regards,</p>
-
-<p>{Sender_FirstName} {Sender_LastName}</p>';
+<p>Herzlich willkommen zur Coverdale e-Academy. Anbei finden Sie Ihre persönlichen Zugangsdaten. Nachdem Sie sich zum ersten Mal angemeldet haben, werden Sie vom System aufgefordert, das Passwort zu ändern.</p>
+<p>Ihre Anmeldeinformationen lauten:<p>
+<p>URL: <a href="{LinkURL}">{LinkURL}</a></p>
+<p>Username: {User_Username}</br>
+Password: {User_Newpassword}</br>
+<p>Alle weiteren Dokumente wie</p>
+<ul>
+<li>Allgemeine Kursinformation</li>
+<li>Dokumentation</li>
+<li>Unterlagen, etc.</li>
+</ul>
+<p>finden Sie auf unserer Lernplattform. Unsere Datenschutzerkl&auml;rung finden sie <a title="Datenschutzerkl&auml;rung" href="https://www.coverdale.at/datenschutz-cookies/">hier</a>.</p>
+</br>
+Für etwaige Fragen stehen wir Ihnen gerne zur Verfügung.</br>
+</br>
+Mit freundlichen Grüßen</br>
+Margit Darnhofer</br>
+</br>
+</br>
+Coverdale Managementberatungs und -trainings Gesellschaft m.b.H.</br>
+Mohsgasse 1, Halbstock</br>
+1030 Wien</br>
+Tel. +43 (0)1 533 44 27</br>
+mailto:office@coverdale.at</p>';
 
 $string['completion_course_supervisor_description'] = 'Template sent out to a users supervisor email address (if defined) when a user completed a course.';
 $string['completion_course_supervisor_name'] = 'User\'s supervisor completion report';

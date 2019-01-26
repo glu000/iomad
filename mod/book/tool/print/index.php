@@ -76,8 +76,19 @@ $PAGE->set_title($strtitle);
 $PAGE->set_heading($strtitle);
 $PAGE->requires->css('/mod/book/tool/print/print.css');
 
+// XXXXXXXX start
+$PAGE->requires->css('/mod/book/tool/print/cmbtprint.css');
+
+echo '<div class="divHeader"><img src="http://localhost:8000/CovLogo300.jpg" style="float:right;width:150px;height:36px;"></div>';
+echo '<div class="divFooter">Coverdale Managementberatungs und -trainings GmbH, Mohsgasse 1/Halbstock, 1030 Wien<br>Tel.: +43 1 533 44 27, office@coverdale.at, www.coverdale.at</div>';
+
+// XXXXXXXXX end
+
 // Begin page output.
 echo $OUTPUT->header();
+
+
+
 
 if ($chapter) {
 
