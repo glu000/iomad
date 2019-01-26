@@ -114,6 +114,7 @@ if ($settings = $settingsform->get_data()) {
     } else {
         $sdata->feedbackscores = 0;
     }
+    $sdata->absvalues = $settings->absvalues;
 
     if (isset ($settings->feedbacknotes)) {
         $sdata->fbnotesitemid = $settings->feedbacknotes['itemid'];

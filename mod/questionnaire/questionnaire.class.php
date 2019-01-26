@@ -1070,7 +1070,7 @@ class questionnaire {
             }
 
             $fields = array('name', 'realm', 'title', 'subtitle', 'email', 'theme', 'thanks_page',
-                    'thank_head', 'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'chart_type');
+                    'thank_head', 'thank_body', 'feedbacknotes', 'info', 'feedbacksections', 'feedbackscores', 'absvalues', 'chart_type');
             $name = $DB->get_field('questionnaire_survey', 'name', array('id' => $this->survey->id));
 
             // Trying to change survey name.
@@ -3718,6 +3718,8 @@ class questionnaire {
             default:
         }
 
+        $showabs=$this->survey->absvalues;
+
         foreach ($allscore as $key => $sc) {
             $lb = explode("|", $chartlabels[$key]);
             $oppositescore = '';
@@ -3729,12 +3731,30 @@ class questionnaire {
             } else {
                 $sectionlabel = $chartlabels[$key];
             }
-            if ($compare) {
-                $table->data[] = array($sectionlabel, $scorepercent[$key].'%'.$oppositescore,
-                                $allscorepercent[$key].'%'.$oppositeallscore);
-            } else {
-                $table->data[] = array($sectionlabel, $allscorepercent[$key].'%'.$oppositeallscore);
+
+            if ($showabs)
+            {
+                $allabs = round ($allscore[$key] / $nbparticipants,1);
+                if ($compare) {
+                    $table->data[] = array($sectionlabel, $score[$key]. ' von ' . $maxscore[$key] .$oppositescore,
+                        $allabs. ' von ' . $maxscore[$key].$oppositeallscore);
+                } else {
+                    $table->data[] = array($sectionlabel, $allabs. $oppositeallscore);
+                }
             }
+            else
+            {
+                if ($compare) {
+                    $table->data[] = array($sectionlabel, $scorepercent[$key].'%'.$oppositescore,
+                        $allscorepercent[$key].'%'.$oppositeallscore);
+                } else {
+                    $table->data[] = array($sectionlabel, $allscorepercent[$key].'%'.$oppositeallscore);
+                }
+            }
+
+
+
+
         }
         $usergraph = get_config('questionnaire', 'usergraph');
         if ($usergraph && $this->survey->chart_type) {
