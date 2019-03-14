@@ -291,8 +291,8 @@ $string['user_reset_body'] = '<p>Sehr geehrte/r {User_FirstName} {User_LastName}
 <p>Ihr Passwort auf der Coverdale e-Academy wurde zurückgesetzt. Bei Ihrer nächsten Anmeldung werden Sie vom System aufgefordert, das Passwort zu ändern.</p>
 <p>Ihre Anmeldeinformationen lauten:<p>
 <p>URL: <a href="{SiteURL}">{SiteURL}</a></p>
-<p>Username: {User_Username}</br>
-Password: {User_Newpassword}</br>
+<p>Anmeldename: {User_Username}</br>
+Kennwort: {User_Newpassword}</br>
 </br>
 <p>Alle weiteren Dokumente wie</p>
 <ul>
@@ -311,19 +311,19 @@ Margit Darnhofer</br>
 Coverdale Managementberatungs und -trainings Gesellschaft m.b.H.</br>
 Mohsgasse 1, Halbstock</br>
 1030 Wien</br>
-Tel. +43 (0)1 533 44 27</br>
-mailto:office@coverdale.at</p>';
+Tel. +43 (0)1 533 44 27</br></p>
+<a href="mailto:office@coverdale.at">office@coverdale.at</a>';
 
 $string['user_create_description'] = 'Template sent out to a new user when a new account has been created.';
 $string['user_create_name'] = 'New user created';
 $string['user_create_subject'] = 'Herzlich Willkommen zur Coverdale e-Academy';
 $string['user_create_body'] = '<p>Sehr geehrte/r {User_FirstName} {User_LastName},</p>
 
-<p>Herzlich willkommen zur Coverdale e-Academy. Anbei finden Sie Ihre persönlichen Zugangsdaten. Nachdem Sie sich zum ersten Mal angemeldet haben, werden Sie vom System aufgefordert, das Passwort zu ändern.</p>
+<p>herzlich willkommen zur Coverdale e-Academy. Mit diesem E-Mail erhalten Sie Ihre persönlichen Zugangsdaten. Nachdem Sie sich zum ersten Mal angemeldet haben, werden Sie vom System aufgefordert, das Passwort zu ändern.</p>
 <p>Ihre Anmeldeinformationen lauten:<p>
 <p>URL: <a href="{LinkURL}">{LinkURL}</a></p>
-<p>Username: {User_Username}</br>
-Password: {User_Newpassword}</br>
+<p>Anmeldename: {User_Username}</br>
+Kennwort: {User_Newpassword}</br>
 <p>Alle weiteren Dokumente wie</p>
 <ul>
 <li>Allgemeine Kursinformation</li>
@@ -341,8 +341,8 @@ Margit Darnhofer</br>
 Coverdale Managementberatungs und -trainings Gesellschaft m.b.H.</br>
 Mohsgasse 1, Halbstock</br>
 1030 Wien</br>
-Tel. +43 (0)1 533 44 27</br>
-mailto:office@coverdale.at</p>';
+Tel. +43 (0)1 533 44 27</br></p>
+<a href="mailto:office@coverdale.at">office@coverdale.at</a>';
 
 $string['completion_course_supervisor_description'] = 'Template sent out to a users supervisor email address (if defined) when a user completed a course.';
 $string['completion_course_supervisor_name'] = 'User\'s supervisor completion report';
