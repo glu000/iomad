@@ -76,5 +76,6 @@ $questionnaire->view();
 
 // Output the page.
 echo $questionnaire->renderer->header();
+$questionnaire->name = format_string($questionnaire->name);
 echo $questionnaire->renderer->render($questionnaire->page);
 echo $questionnaire->renderer->footer($course);
