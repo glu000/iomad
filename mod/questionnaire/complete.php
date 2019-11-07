@@ -32,7 +32,6 @@ $sid = optional_param('sid', null, PARAM_INT);  // Survey id.
 $resume = optional_param('resume', null, PARAM_INT);    // Is this attempt a resume of a saved attempt?
 
 list($cm, $course, $questionnaire) = questionnaire_get_standard_page_items($id, $a);
-$questionnaire->name = format_string($questionnaire->name);
 
 // Check login and get context.
 require_course_login($course, true, $cm);
@@ -52,6 +51,8 @@ $questionnaire = new questionnaire(0, $questionnaire, $course, $cm);
 // Add renderer and page objects to the questionnaire object for display use.
 $questionnaire->add_renderer($PAGE->get_renderer('mod_questionnaire'));
 $questionnaire->add_page(new \mod_questionnaire\output\completepage());
+
+$questionnaire->page->add_to_page('questionnairename', format_string($questionnaire->name));
 
 $questionnaire->strquestionnaires = get_string("modulenameplural", "questionnaire");
 $questionnaire->strquestionnaire  = get_string("modulename", "questionnaire");
