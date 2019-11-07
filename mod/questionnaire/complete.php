@@ -52,8 +52,6 @@ $questionnaire = new questionnaire(0, $questionnaire, $course, $cm);
 $questionnaire->add_renderer($PAGE->get_renderer('mod_questionnaire'));
 $questionnaire->add_page(new \mod_questionnaire\output\completepage());
 
-$questionnaire->page->add_to_page('questionnairename', format_string($questionnaire->name));
-
 $questionnaire->strquestionnaires = get_string("modulenameplural", "questionnaire");
 $questionnaire->strquestionnaire  = get_string("modulename", "questionnaire");
 
