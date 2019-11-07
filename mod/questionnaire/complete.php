@@ -32,6 +32,7 @@ $sid = optional_param('sid', null, PARAM_INT);  // Survey id.
 $resume = optional_param('resume', null, PARAM_INT);    // Is this attempt a resume of a saved attempt?
 
 list($cm, $course, $questionnaire) = questionnaire_get_standard_page_items($id, $a);
+$questionnaire->name = format_string($questionnaire->name);
 
 // Check login and get context.
 require_course_login($course, true, $cm);
@@ -76,6 +77,5 @@ $questionnaire->view();
 
 // Output the page.
 echo $questionnaire->renderer->header();
-$questionnaire->name = format_string($questionnaire->name);
 echo $questionnaire->renderer->render($questionnaire->page);
 echo $questionnaire->renderer->footer($course);
